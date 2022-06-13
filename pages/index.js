@@ -12,11 +12,12 @@ import {
     ListItem,
     useColorModeValue,
 } from "@chakra-ui/react"
-import Navbar from '../components/navbar'
-import Layout from '../components/layouts/main'
-import About from '../components/about'
+import Navbar from '../components/Navbar'
+import Layout from '../components/layouts/Main'
+import About from '../components/About'
 import {ChevronRightIcon} from "@chakra-ui/icons"
 import {FaTwitter, FaGithub} from "react-icons/fa"
+import Footer from '../components/Footer'
 
 const Home = () => {
     return (
@@ -149,6 +150,7 @@ const Home = () => {
                         </ListItem>
                     </List>
                 </Flex>
+                <Footer />
             </Layout>
         </Flex>
     )

@@ -8,6 +8,7 @@ import {
     VStack,
     useColorModeValue,
 } from '@chakra-ui/react'
+import Tilt from 'react-parallax-tilt'
 
 const About = () => {
     return (
@@ -31,12 +32,22 @@ const About = () => {
                         Software Engineer / UX Designer
                     </Text>
                 </VStack>
-               <Box>
-                   <Image
-                       src={useColorModeValue('/images/avatar-light.png', '/images/avatar-dark.png')}
-                   />
-               </Box>
-            </Flex>
+                    <Tilt
+                        trackOnWindow={true}
+                        tiltReverse={true}
+                        scale={1.05}
+                        tiltMaxAngleX={20}
+                        tiltMaxAngleY={20}
+                        transitionSpeed={500}
+                    >
+                        <Box>
+                            <Image
+                                src={useColorModeValue('/images/avatar-light.png', '/images/avatar-dark.png')}
+                            />
+                        </Box>
+                    </Tilt>
+                </Flex>
+
             <Box
                 borderRadius="lg"
                 mt={6}
@@ -46,7 +57,7 @@ const About = () => {
                 bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
                 css={{ backdropFilter: 'blur(10px)' }}
             >
-                Hey, I&apos;m an app and web3 developer based in Scottsdale, AZ!
+                Greetings. I&apos;m an app and web3 developer based in Scottsdale, AZ!
             </Box>
         </Box>
     )
