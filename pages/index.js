@@ -1,209 +1,157 @@
-import Head from 'next/head'
+import React from "react"
+import {
+    Flex,
+    Heading,
+    Text,
+    Button,
+    Grid,
+    GridItem,
+    Image,
+    Link,
+    List,
+    ListItem,
+    useColorModeValue,
+} from "@chakra-ui/react"
+import Navbar from '../components/navbar'
+import Layout from '../components/layouts/main'
+import About from '../components/about'
+import {ChevronRightIcon} from "@chakra-ui/icons"
+import {FaTwitter, FaGithub} from "react-icons/fa"
 
-export default function Home() {
-  return (
-    <div className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className="logo" />
-        </a>
-      </footer>
-
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </div>
-  )
+const Home = () => {
+    return (
+        <Flex>
+            <Navbar />
+            <Layout>
+                <About />
+                <Heading
+                    fontWeight={'regular'}
+                    pb={'1rem'}
+                    borderBottom={'1px solid'}
+                    borderBottomColor={useColorModeValue('darkText', 'lightText')}
+                    mb={'2rem'}
+                    w={'max-content'}
+                >
+                    Work
+                </Heading>
+                <Text mb={'1rem'}>
+                    Parker is an entrepreneur and a full-stack developer based in Arizona with a passion for building digital
+                    services/web3 projects with a beautiful user experience. He has a knack for all things launching products,
+                    from planning and designing all the way to solving real-life problems with code. When not online,
+                    he loves hanging out with his family and all things space related. Currently,
+                    he is working as the founder of a software development agency called Blue Hare.
+                </Text>
+                <Flex justifyContent={'center'}>
+                    <Button
+                        colorScheme={'teal'}
+                        rightIcon={<ChevronRightIcon />}
+                        mb={'3rem'}
+                        textTransform={'uppercase'}
+                    >
+                        My Portfolio
+                    </Button>
+                </Flex>
+                <Heading
+                    fontWeight={'regular'}
+                    pb={'1rem'}
+                    borderBottom={'1px solid'}
+                    borderBottomColor={useColorModeValue('darkText', 'lightText')}
+                    mb={'2rem'}
+                    w={'max-content'}
+                >
+                    Bio
+                </Heading>
+                <Grid templateColumns='repeat(6, 1fr)' gap={'16px'} mb={'3rem'}>
+                    <GridItem colSpan={2}>
+                        <Text fontWeight={'bold'}>
+                            1988
+                        </Text>
+                    </GridItem>
+                    <GridItem colSpan={4}>
+                        <Text>
+                            Born in Arizona
+                        </Text>
+                    </GridItem>
+                    <GridItem colSpan={2}>
+                        <Text fontWeight={'bold'}>
+                            2015
+                        </Text>
+                    </GridItem>
+                    <GridItem colSpan={4}>
+                        <Text>
+                            Completed the Master’s program in Software Engineering at Brandeis University                        </Text>
+                    </GridItem>
+                    <GridItem colSpan={2}>
+                        <Text fontWeight={'bold'}>
+                            2015
+                        </Text>
+                    </GridItem>
+                    <GridItem colSpan={4}>
+                        <Text>
+                            Technical project lead at Core Online Training
+                        </Text>
+                    </GridItem>
+                    <GridItem colSpan={2}>
+                        <Text fontWeight={'bold'}>
+                            2016
+                        </Text>
+                    </GridItem>
+                    <GridItem colSpan={4}>
+                        <Text>
+                            Director of Technology at Bedrock Financial Services
+                        </Text>
+                    </GridItem>
+                    <GridItem colSpan={2}>
+                        <Text fontWeight={'bold'}>
+                            2016 to present
+                        </Text>
+                    </GridItem>
+                    <GridItem colSpan={4}>
+                        <Text>
+                            Founder of Blue Hare
+                        </Text>
+                    </GridItem>
+                </Grid>
+                <Heading
+                    fontWeight={'regular'}
+                    pb={'1rem'}
+                    borderBottom={'1px solid'}
+                    borderBottomColor={useColorModeValue('darkText', 'lightText')}
+                    mb={'2rem'}
+                    w={'max-content'}
+                >
+                    On the web
+                </Heading>
+                <Flex mb={'100px'} justifyContent={'space-between'}>
+                    <Image src={useColorModeValue('/Images/info-light.svg', '/Images/info-dark.svg')} />
+                    <List spacing={'16px'}>
+                        <ListItem>
+                            <Link href="https://twitter.com/parkeresmay" target="_blank">
+                                <Button
+                                    variant="ghost"
+                                    colorScheme="teal"
+                                    leftIcon={<FaTwitter />}
+                                >
+                                    @parkeresmay
+                                </Button>
+                            </Link>
+                        </ListItem>
+                        <ListItem>
+                            <Link href="https://github.com/thesyntaxninja" target="_blank">
+                                <Button
+                                    variant="ghost"
+                                    colorScheme="teal"
+                                    leftIcon={<FaGithub />}
+                                >
+                                    @thesyntaxninja
+                                </Button>
+                            </Link>
+                        </ListItem>
+                    </List>
+                </Flex>
+            </Layout>
+        </Flex>
+    )
 }
+
+export default Home
