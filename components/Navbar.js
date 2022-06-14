@@ -68,10 +68,9 @@ const Navbar = props => {
                     <LinkItem href="/works" path={path} textTransform={'uppercase'}>
                         Works
                     </LinkItem>
-                    {/*TODO update GitHub links*/}
                     <LinkItem
                         target="_blank"
-                        href="https://twitter.com/parkeresmay"
+                        href="https://github.com/thesyntaxninja/portfolio"
                         path={path}
                         display="inline-flex"
                         alignItems="center"
@@ -104,7 +103,7 @@ const Navbar = props => {
                                 </NextLink>
                                 <MenuItem
                                     as={Link}
-                                    href="https://twitter.com/parkeresmay"
+                                    href="https://github.com/thesyntaxninja/portfolio"
                                 >
                                     View Source
                                 </MenuItem>
