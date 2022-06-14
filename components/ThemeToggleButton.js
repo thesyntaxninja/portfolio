@@ -31,8 +31,8 @@ const ThemeToggleButton = () => {
                         <Icon
                             as={FaRebel}
                             color={'black'}
-                            h={6}
-                            w={6}
+                            h={5}
+                            w={5}
                         />
                     )}
                     onClick={toggleColorMode}

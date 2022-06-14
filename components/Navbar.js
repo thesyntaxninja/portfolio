@@ -13,16 +13,16 @@ import {
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './ThemeToggleButton'
-import { IoLogoGithub } from 'react-icons/io5'
+import { IoLogoGithub, IoHome } from 'react-icons/io5'
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
     const active = path === href
-    const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
+    const inactiveColor = useColorModeValue('darkText', 'lightText')
     return (
         <NextLink href={href} passHref scroll={false}>
             <Link
                 p={2}
-                bg={active ? 'teal' : undefined}
+                bg={active ? useColorModeValue('teal', '#81E6D9') : undefined}
                 color={active ? '#202023' : inactiveColor}
                 target={target}
                 {...props}
@@ -62,9 +62,13 @@ const Navbar = props => {
                     flexGrow={1}
                     mt={{ base: 4, md: 0 }}
                 >
+                    <LinkItem href="/" path={path} textTransform={'uppercase'}>
+                        <IoHome />
+                    </LinkItem>
                     <LinkItem href="/works" path={path} textTransform={'uppercase'}>
                         Works
                     </LinkItem>
+                    {/*TODO update GitHub links*/}
                     <LinkItem
                         target="_blank"
                         href="https://twitter.com/parkeresmay"
@@ -91,7 +95,7 @@ const Navbar = props => {
                                 variant="outline"
                                 aria-label="Options"
                             />
-                            <MenuList>
+                            <MenuList backgroundColor={useColorModeValue('white', '#202023')}>
                                 <NextLink href="/" passHref>
                                     <MenuItem as={Link}>About</MenuItem>
                                 </NextLink>
@@ -100,7 +104,7 @@ const Navbar = props => {
                                 </NextLink>
                                 <MenuItem
                                     as={Link}
-                                    href="https://github.com/craftzdog/craftzdog-homepage"
+                                    href="https://twitter.com/parkeresmay"
                                 >
                                     View Source
                                 </MenuItem>

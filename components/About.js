@@ -17,6 +17,7 @@ const About = () => {
                 mt={'80px'}
                 justifyContent={'space-between'}
                 alignItems={'center'}
+                flexDirection={{sm: 'column', md: 'row'}}
             >
                 <VStack align={'left'}>
                     <Heading
@@ -40,11 +41,10 @@ const About = () => {
                         tiltMaxAngleY={20}
                         transitionSpeed={500}
                     >
-                        <Box>
-                            <Image
-                                src={useColorModeValue('/images/avatar-light.png', '/images/avatar-dark.png')}
-                            />
-                        </Box>
+                        <Image
+                            src={useColorModeValue('/images/avatar-light.svg', '/images/avatar-dark.svg')}
+                            mt={{sm: '1rem', md: 0}}
+                        />
                     </Tilt>
                 </Flex>
 
