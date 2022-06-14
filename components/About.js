@@ -17,18 +17,18 @@ const About = () => {
                 mt={'80px'}
                 justifyContent={'space-between'}
                 alignItems={'center'}
-                flexDirection={{sm: 'column', md: 'row'}}
+                flexDirection={{base: 'column', md: 'row'}}
             >
                 <VStack align={'left'}>
                     <Heading
-                        fontSize={'80px'}
+                        fontSize={{base: '60px', md: '80px'}}
                         fontWeight={'medium'}
                     >
                         Parker Esmay
                     </Heading>
                     <Text
                         fontWeight={'medium'}
-                        fontSize={'20px'}
+                        fontSize={'18px'}
                     >
                         Software Engineer / UX Designer
                     </Text>
