@@ -28,7 +28,7 @@ const About = () => {
                     </Heading>
                     <Text
                         fontWeight={'medium'}
-                        fontSize={'18px'}
+                        fontSize={{base: '18px', md: '20px'}}
                     >
                         Software Engineer / UX Designer
                     </Text>
@@ -43,14 +43,14 @@ const About = () => {
                     >
                         <Image
                             src={useColorModeValue('/images/avatar-light.svg', '/images/avatar-dark.svg')}
-                            mt={{sm: '1rem', md: 0}}
+                            mt={{base: '1rem', md: 0}}
                         />
                     </Tilt>
                 </Flex>
 
             <Box
                 borderRadius="lg"
-                mt={6}
+                mt={{base: 12, md: 6}}
                 mb={'48px'}
                 p={6}
                 textAlign="center"
