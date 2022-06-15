@@ -129,7 +129,7 @@ const Home = () => {
             >
                 <Image
                     pt={{base: '16px', md: 0}}
-                    src={useColorModeValue('/images/info-light.svg', '/images/info-dark.svg')}
+                    src={useColorModeValue('/images/home/info-light.svg', '/images/home/info-dark.svg')}
                     alignSelf={{base: 'center'}}
                 />
                 <List spacing={'16px'}>

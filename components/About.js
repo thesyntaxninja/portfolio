@@ -42,7 +42,7 @@ const About = () => {
                         transitionSpeed={500}
                     >
                         <Image
-                            src={useColorModeValue('/images/avatar-light.svg', '/images/avatar-dark.svg')}
+                            src={useColorModeValue('/images/home/avatar-light.svg', '/images/home/avatar-dark.svg')}
                             mt={{base: '1rem', md: 0}}
                         />
                     </Tilt>
