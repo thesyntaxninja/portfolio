@@ -21,7 +21,7 @@ const Works = () => {
             >
                 Works
             </Heading>
-            <SimpleGrid columns={{base: 1, md: 2}} spacing={10} mb={'3rem'}>
+            <SimpleGrid columns={{base: 1, md: 2}} spacingX={10} spacingY={6} mb={'3rem'}>
                 <Animate>
                     <Card
                         link={'https://www.pocuspro.com/'}
@@ -57,7 +57,7 @@ const Works = () => {
             >
                 Web3
             </Heading>
-            <SimpleGrid columns={{base: 1, md: 2}} spacing={10} mb={'3rem'}>
+            <SimpleGrid columns={{base: 1, md: 2}} spacingX={10} spacingY={6} mb={'3rem'}>
                 <Animate delay={.4}>
                     <Card
                         link={'https://www.drifternovel.com/'}
