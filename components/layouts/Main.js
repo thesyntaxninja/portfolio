@@ -8,7 +8,6 @@ import { useRouter } from 'next/router'
 
 const Main = ({children}) => {
     const router = useRouter()
-
     return (
         <Flex as="main">
             <Head>

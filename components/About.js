@@ -44,8 +44,6 @@ const About = () => {
                         <Image
                             src={useColorModeValue('/images/avatar-light.svg', '/images/avatar-dark.svg')}
                             mt={{base: '1rem', md: 0}}
-                            position={'relative'}
-                            zIndex={-1}
                         />
                     </Tilt>
                 </Flex>
