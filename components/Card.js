@@ -1,16 +1,24 @@
 import React from 'react'
-import {Flex, Heading, Image, Text, Link} from "@chakra-ui/react";
+import {Flex, Heading, Image, Text, LinkBox, LinkOverlay} from "@chakra-ui/react";
 
 
-const Card = ({link, imgSrc, headingText, descriptionText}) => {
+const Card = ({link, imgSrc, titleText, descriptionText}) => {
     return (
-        <Link href={link} isExternal  style={{textDecoration: 'none'}}>
+        <LinkBox>
             <Flex flexDirection={'column'} alignItems={'center'}>
                 <Image borderRadius={'15px'} src={imgSrc} mb={'.5rem'} />
-                <Heading fontWeight={'regular'} fontSize={'24px'} mb={'.5rem'}>{headingText}</Heading>
+                <LinkOverlay href={link} isExternal>
+                    <Heading
+                        fontWeight={'regular'}
+                        fontSize={'24px'}
+                        mb={'.5rem'}
+                    >
+                        {titleText}
+                    </Heading>
+                </LinkOverlay>
                 <Text fontSize={'14px'}>{descriptionText}</Text>
             </Flex>
-        </Link>
+        </LinkBox>
     )
 }
 

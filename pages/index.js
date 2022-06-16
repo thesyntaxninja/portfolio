@@ -23,6 +23,7 @@ const Home = () => {
         <Layout>
             <Animate delay={.1}>
                 <Heading
+                    as={'h2'}
                     fontWeight={'regular'}
                     pb={'1rem'}
                     borderBottom={'1px solid'}
@@ -53,6 +54,7 @@ const Home = () => {
                     </NextLink>
                 </Flex>
                 <Heading
+                    as={'h2'}
                     fontWeight={'regular'}
                     pb={'1rem'}
                     borderBottom={'1px solid'}
@@ -115,6 +117,7 @@ const Home = () => {
                     </GridItem>
                 </Grid>
                 <Heading
+                    as={'h2'}
                     fontWeight={'regular'}
                     pb={'1rem'}
                     borderBottom={'1px solid'}

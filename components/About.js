@@ -21,6 +21,7 @@ const About = () => {
             >
                 <VStack align={'left'}>
                     <Heading
+                        as={'h1'}
                         fontSize={{base: '60px', md: '80px'}}
                         fontWeight={'medium'}
                     >
