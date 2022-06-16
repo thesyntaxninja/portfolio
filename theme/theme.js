@@ -16,7 +16,6 @@ const fonts = {
 }
 
 const colors = {
-    grassTeal: '#88ccca',
     bgDark: '#202023',
     bgLight: '#f0e7db',
     darkText: 'rgba(0, 0, 0, .7)',

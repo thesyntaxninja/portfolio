@@ -64,7 +64,7 @@ const Works = () => {
                             link={'https://www.drifternovel.com/'}
                             imgSrc={'/images/works/drifters.png'}
                             headingText={'Drifters of Alta'}
-                            descriptionText={'A PFP NFT based on the characters from the first full length fantasy novel ' +
+                            descriptionText={'A PFP NFT drop based on the characters from the first full length fantasy novel ' +
                                 'on the Ethereum blockchain.'}
                         />
                     </Animate>
