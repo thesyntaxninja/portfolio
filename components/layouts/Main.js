@@ -16,7 +16,7 @@ const Main = ({children}) => {
                 <meta name="author" content="Parker Esmay" />
                 <meta name="author" content="Parker Esmay" />
                 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-                <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+                <link rel="shortcut icon" href="/rebel.png" type="image/png" />
                 <meta name="twitter:title" content="Parker Esmay" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:site" content="@parkeresmay" />
