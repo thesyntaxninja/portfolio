@@ -38,7 +38,7 @@ const Home = () => {
                     products with beautiful user experiences. He can work his way up and down the stack, but has a passion
                     for frontend development. He has a knack for all things launching products, from planning and designing
                     to solving real-life problems with code. When not online, he loves hanging out with his family and all
-                    things space related. Currently, he is working as the founder of a software development agency called Blue Hare.
+                    things space related. Currently, he is working as a Senior Frontend Web3 Engineer at Alta Finance.
                 </Text>
                 <Flex justifyContent={'center'}>
                     <NextLink href="/works" scroll={false}>
@@ -113,6 +113,16 @@ const Home = () => {
                     <GridItem colSpan={4}>
                         <Text>
                             Founder of Blue Hare
+                        </Text>
+                    </GridItem>
+                    <GridItem colSpan={2}>
+                        <Text fontWeight={'bold'}>
+                            2022 to present
+                        </Text>
+                    </GridItem>
+                    <GridItem colSpan={4}>
+                        <Text>
+                            Senior Frontend Web3 Engineer at Alta Finance
                         </Text>
                     </GridItem>
                 </Grid>
