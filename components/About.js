@@ -31,7 +31,7 @@ const About = () => {
                         fontWeight={'medium'}
                         fontSize={{base: '18px', md: '20px'}}
                     >
-                        Software Engineer / UX Designer
+                        Software Engineer / Digital Artisan
                     </Text>
                 </VStack>
                     <Tilt
