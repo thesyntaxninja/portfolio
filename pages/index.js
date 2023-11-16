@@ -38,7 +38,7 @@ const Home = () => {
                     products with beautiful user experiences. He can work his way up and down the stack, but has a passion
                     for frontend development. He has a knack for all things launching products, from planning and designing
                     to solving real-life problems with code. When not online, he loves hanging out with his family and all
-                    things space related. Currently, he is working as a Senior Frontend Web3 Engineer at Alta Finance.
+                    things space related. Currently, he is working as a Software Engineer at Supa Finance.
                 </Text>
                 <Flex justifyContent={'center'}>
                     <NextLink href="/works" scroll={false}>
@@ -77,12 +77,12 @@ const Home = () => {
                     </GridItem>
                     <GridItem colSpan={2}>
                         <Text fontWeight={'bold'}>
-                            2015
+                            2014
                         </Text>
                     </GridItem>
                     <GridItem colSpan={4}>
                         <Text>
-                            Completed the Master’s program in Software Engineering at Brandeis University
+                            Technical project lead at Core Online Training
                         </Text>
                     </GridItem>
                     <GridItem colSpan={2}>
@@ -92,7 +92,7 @@ const Home = () => {
                     </GridItem>
                     <GridItem colSpan={4}>
                         <Text>
-                            Technical project lead at Core Online Training
+                            Completed the Master’s program in Software Engineering at Brandeis University
                         </Text>
                     </GridItem>
                     <GridItem colSpan={2}>
@@ -107,7 +107,7 @@ const Home = () => {
                     </GridItem>
                     <GridItem colSpan={2}>
                         <Text fontWeight={'bold'}>
-                            2016 to present
+                            2017
                         </Text>
                     </GridItem>
                     <GridItem colSpan={4}>
@@ -117,12 +117,22 @@ const Home = () => {
                     </GridItem>
                     <GridItem colSpan={2}>
                         <Text fontWeight={'bold'}>
-                            2022 to present
+                            2022
                         </Text>
                     </GridItem>
                     <GridItem colSpan={4}>
                         <Text>
                             Senior Frontend Web3 Engineer at Alta Finance
+                        </Text>
+                    </GridItem>
+                    <GridItem colSpan={2}>
+                        <Text fontWeight={'bold'}>
+                            2023 to present
+                        </Text>
+                    </GridItem>
+                    <GridItem colSpan={4}>
+                        <Text>
+                            Software Engineer at Supa Finance
                         </Text>
                     </GridItem>
                 </Grid>
