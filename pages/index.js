@@ -77,12 +77,12 @@ const Home = () => {
                     </GridItem>
                     <GridItem colSpan={2}>
                         <Text fontWeight={'bold'}>
-                            2015
+                            2014
                         </Text>
                     </GridItem>
                     <GridItem colSpan={4}>
                         <Text>
-                            Completed the Master’s program in Software Engineering at Brandeis University
+                            Technical project lead at Core Online Training
                         </Text>
                     </GridItem>
                     <GridItem colSpan={2}>
@@ -92,7 +92,7 @@ const Home = () => {
                     </GridItem>
                     <GridItem colSpan={4}>
                         <Text>
-                            Technical project lead at Core Online Training
+                            Completed the Master’s program in Software Engineering at Brandeis University
                         </Text>
                     </GridItem>
                     <GridItem colSpan={2}>
@@ -107,7 +107,7 @@ const Home = () => {
                     </GridItem>
                     <GridItem colSpan={2}>
                         <Text fontWeight={'bold'}>
-                            2016 to present
+                            2017
                         </Text>
                     </GridItem>
                     <GridItem colSpan={4}>
@@ -117,12 +117,22 @@ const Home = () => {
                     </GridItem>
                     <GridItem colSpan={2}>
                         <Text fontWeight={'bold'}>
-                            2022 to present
+                            2022
                         </Text>
                     </GridItem>
                     <GridItem colSpan={4}>
                         <Text>
                             Senior Frontend Web3 Engineer at Alta Finance
+                        </Text>
+                    </GridItem>
+                    <GridItem colSpan={2}>
+                        <Text fontWeight={'bold'}>
+                            2023 to present
+                        </Text>
+                    </GridItem>
+                    <GridItem colSpan={4}>
+                        <Text>
+                            Software Engineer at Supa Finance
                         </Text>
                     </GridItem>
                 </Grid>
