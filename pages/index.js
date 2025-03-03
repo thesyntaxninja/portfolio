@@ -38,7 +38,7 @@ const Home = () => {
                     products with beautiful user experiences. He can work his way up and down the stack, but has a passion
                     for frontend development. He has a knack for all things launching products, from planning and designing
                     to solving real-life problems with code. When not online, he loves hanging out with his family and all
-                    things space related. Currently, he is working as a Software Engineer at Supa Finance.
+                    things space related. Currently, he is working as a Senior Fullstack Software Engineer at Kinetic.
                 </Text>
                 <Flex justifyContent={'center'}>
                     <NextLink href="/works" scroll={false}>
@@ -65,16 +65,6 @@ const Home = () => {
                     Bio
                 </Heading>
                 <Grid templateColumns='repeat(6, 1fr)' gap={'16px'} mb={'3rem'}>
-                    <GridItem colSpan={2}>
-                        <Text fontWeight={'bold'}>
-                            1988
-                        </Text>
-                    </GridItem>
-                    <GridItem colSpan={4}>
-                        <Text>
-                            Born in Arizona
-                        </Text>
-                    </GridItem>
                     <GridItem colSpan={2}>
                         <Text fontWeight={'bold'}>
                             2014
@@ -127,12 +117,22 @@ const Home = () => {
                     </GridItem>
                     <GridItem colSpan={2}>
                         <Text fontWeight={'bold'}>
-                            2023 to present
+                            2023
                         </Text>
                     </GridItem>
                     <GridItem colSpan={4}>
                         <Text>
-                            Software Engineer at Supa Finance
+                            Founding Software Engineer at Supa Finance
+                        </Text>
+                    </GridItem>
+                    <GridItem colSpan={2}>
+                        <Text fontWeight={'bold'}>
+                            2024
+                        </Text>
+                    </GridItem>
+                    <GridItem colSpan={4}>
+                        <Text>
+                            Senior Fullstack Engineer at Kinetic
                         </Text>
                     </GridItem>
                 </Grid>
