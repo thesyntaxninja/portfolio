@@ -31,7 +31,7 @@ const About = () => {
                         fontWeight={'medium'}
                         fontSize={{base: '18px', md: '20px'}}
                     >
-                        Software Engineer / Digital Artisan
+                        Founder / Engineer
                     </Text>
                 </VStack>
                     <Tilt
@@ -58,7 +58,7 @@ const About = () => {
                 bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
                 css={{ backdropFilter: 'blur(10px)' }}
             >
-                Greetings. I&apos;m an app and web3 developer based in Scottsdale, AZ!
+                Greetings. I&apos;m a founder and engineering leader based in Scottsdale, AZ!
             </Box>
         </Box>
     )

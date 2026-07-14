@@ -34,11 +34,12 @@ const Home = () => {
                     Work
                 </Heading>
                 <Text mb={'1rem'}>
-                    Parker is an entrepreneur and software engineer with a passion for building digital/web3
-                    products with beautiful user experiences. He can work his way up and down the stack, but has a passion
-                    for frontend development. He has a knack for all things launching products, from planning and designing
-                    to solving real-life problems with code. When not online, he loves hanging out with his family and all
-                    things space related. Currently, he is working as a Senior Fullstack Software Engineer at Kinetic.
+                    Parker is an entrepreneur and engineering leader with a passion for building digital
+                    products with beautiful user experiences. He has grown from hands-on fullstack engineering to
+                    leading teams, most recently as Head of Engineering at Kinetic, and still loves working up and
+                    down the stack, especially on the frontend. He has a knack for all things launching products,
+                    from planning and designing to solving real-life problems with code. When not online, he loves
+                    hanging out with his family and all things space related. Currently, he is the CEO of Superstack.
                 </Text>
                 <Flex justifyContent={'center'}>
                     <NextLink href="/works" scroll={false}>
@@ -132,7 +133,17 @@ const Home = () => {
                     </GridItem>
                     <GridItem colSpan={4}>
                         <Text>
-                            Senior Fullstack Engineer at Kinetic
+                            Head of Engineering at Kinetic
+                        </Text>
+                    </GridItem>
+                    <GridItem colSpan={2}>
+                        <Text fontWeight={'bold'}>
+                            2026
+                        </Text>
+                    </GridItem>
+                    <GridItem colSpan={4}>
+                        <Text>
+                            CEO of Superstack
                         </Text>
                     </GridItem>
                 </Grid>
