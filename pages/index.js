@@ -1,163 +1,44 @@
 import React from "react"
 import {
     Flex,
-    Heading,
     Text,
     Button,
-    Grid,
-    GridItem,
     Image,
-    Link,
     List,
-    ListItem,
-    useColorModeValue,
 } from "@chakra-ui/react"
 import Layout from "../components/layouts/Main"
-import {ChevronRightIcon} from "@chakra-ui/icons"
-import {FaTwitter, FaGithub} from "react-icons/fa"
+import SectionHeading from "../components/SectionHeading"
+import {FaTwitter, FaGithub, FaLinkedin} from "react-icons/fa"
+import {MdChevronRight} from "react-icons/md"
 import NextLink from "next/link"
-import Animate from "/components/Animate"
+import Animate from "../components/Animate"
 
 const Home = () => {
     return (
         <Layout>
             <Animate delay={.1}>
-                <Heading
-                    as={'h2'}
-                    fontWeight={'regular'}
-                    pb={'1rem'}
-                    borderBottom={'1px solid'}
-                    borderBottomColor={useColorModeValue('darkText', 'lightText')}
-                    mb={'2rem'}
-                    w={'max-content'}
-                >
-                    Work
-                </Heading>
+                <SectionHeading>About</SectionHeading>
                 <Text mb={'1rem'}>
-                    Parker is an entrepreneur and engineering leader with a passion for building digital
-                    products with beautiful user experiences. He has grown from hands-on fullstack engineering to
-                    leading teams, most recently as Head of Engineering at Kinetic, and still loves working up and
-                    down the stack, especially on the frontend. He has a knack for all things launching products,
-                    from planning and designing to solving real-life problems with code. When not online, he loves
-                    hanging out with his family and all things space related. Currently, he is the CEO of Superstack.
+                    Parker is the founder and CEO of Scriptorii, which helps companies put AI to work across the
+                    tools they already use. He has spent his career leading technical teams and building companies.
+                    He led engineering at Kinetic through $1B in trading volume, then took Superstack through a
+                    merger as CEO. He&apos;s still an engineer at heart, happiest somewhere between product, systems
+                    design, and building the thing. When not online, he loves spending time with his family and all
+                    things space related.
                 </Text>
                 <Flex justifyContent={'center'}>
-                    <NextLink href="/works" scroll={false}>
-                        <Button
-                            colorScheme={'teal'}
-                            rightIcon={<ChevronRightIcon />}
-                            mb={'3rem'}
-                            textTransform={'uppercase'}
-                            href="/works"
-                        >
-                            My Portfolio
-                        </Button>
-                    </NextLink>
+                    <Button
+                        asChild
+                        colorPalette={'teal'}
+                        mb={'3rem'}
+                        textTransform={'uppercase'}
+                    >
+                        <NextLink href="/writing" scroll={false}>
+                            My Writing <MdChevronRight />
+                        </NextLink>
+                    </Button>
                 </Flex>
-                <Heading
-                    as={'h2'}
-                    fontWeight={'regular'}
-                    pb={'1rem'}
-                    borderBottom={'1px solid'}
-                    borderBottomColor={useColorModeValue('darkText', 'lightText')}
-                    mb={'2rem'}
-                    w={'max-content'}
-                >
-                    Bio
-                </Heading>
-                <Grid templateColumns='repeat(6, 1fr)' gap={'16px'} mb={'3rem'}>
-                    <GridItem colSpan={2}>
-                        <Text fontWeight={'bold'}>
-                            2014
-                        </Text>
-                    </GridItem>
-                    <GridItem colSpan={4}>
-                        <Text>
-                            Technical project lead at Core Online Training
-                        </Text>
-                    </GridItem>
-                    <GridItem colSpan={2}>
-                        <Text fontWeight={'bold'}>
-                            2015
-                        </Text>
-                    </GridItem>
-                    <GridItem colSpan={4}>
-                        <Text>
-                            Completed the Master’s program in Software Engineering at Brandeis University
-                        </Text>
-                    </GridItem>
-                    <GridItem colSpan={2}>
-                        <Text fontWeight={'bold'}>
-                            2016
-                        </Text>
-                    </GridItem>
-                    <GridItem colSpan={4}>
-                        <Text>
-                            Director of Technology at Bedrock Financial Services
-                        </Text>
-                    </GridItem>
-                    <GridItem colSpan={2}>
-                        <Text fontWeight={'bold'}>
-                            2017
-                        </Text>
-                    </GridItem>
-                    <GridItem colSpan={4}>
-                        <Text>
-                            Founder of Blue Hare
-                        </Text>
-                    </GridItem>
-                    <GridItem colSpan={2}>
-                        <Text fontWeight={'bold'}>
-                            2022
-                        </Text>
-                    </GridItem>
-                    <GridItem colSpan={4}>
-                        <Text>
-                            Senior Frontend Web3 Engineer at Alta Finance
-                        </Text>
-                    </GridItem>
-                    <GridItem colSpan={2}>
-                        <Text fontWeight={'bold'}>
-                            2023
-                        </Text>
-                    </GridItem>
-                    <GridItem colSpan={4}>
-                        <Text>
-                            Founding Software Engineer at Supa Finance
-                        </Text>
-                    </GridItem>
-                    <GridItem colSpan={2}>
-                        <Text fontWeight={'bold'}>
-                            2024
-                        </Text>
-                    </GridItem>
-                    <GridItem colSpan={4}>
-                        <Text>
-                            Head of Engineering at Kinetic
-                        </Text>
-                    </GridItem>
-                    <GridItem colSpan={2}>
-                        <Text fontWeight={'bold'}>
-                            2026
-                        </Text>
-                    </GridItem>
-                    <GridItem colSpan={4}>
-                        <Text>
-                            CEO of Superstack
-                        </Text>
-                    </GridItem>
-                </Grid>
-                <Heading
-                    as={'h2'}
-                    fontWeight={'regular'}
-                    pb={'1rem'}
-                    borderBottom={'1px solid'}
-                    borderBottomColor={useColorModeValue('darkText', 'lightText')}
-                    mb={'2rem'}
-                    w={'max-content'}
-                >
-                    On the web
-                </Heading>
+                <SectionHeading>On the web</SectionHeading>
                 <Flex
                     mb={'80px'}
                     justifyContent={'space-between'}
@@ -165,33 +46,43 @@ const Home = () => {
                 >
                     <Image
                         pt={{base: '16px', md: 0}}
-                        src={useColorModeValue('/images/home/info-light.svg', '/images/home/info-dark.svg')}
+                        src={'/images/home/info-light.svg'}
+                        _dark={{display: 'none'}}
                         alignSelf={{base: 'center'}}
                     />
-                    <List spacing={'16px'}>
-                        <ListItem>
-                            <Link href="https://twitter.com/parkeresmay" target="_blank">
-                                <Button
-                                    variant="ghost"
-                                    colorScheme="teal"
-                                    leftIcon={<FaTwitter />}
-                                >
+                    <Image
+                        pt={{base: '16px', md: 0}}
+                        src={'/images/home/info-dark.svg'}
+                        display={'none'}
+                        _dark={{display: 'block'}}
+                        alignSelf={{base: 'center'}}
+                    />
+                    <List.Root variant={'plain'} gap={'16px'}>
+                        <List.Item>
+                            <Button asChild variant="ghost" colorPalette="teal">
+                                <a href="https://www.linkedin.com/in/thesyntaxninja" target="_blank" rel="noopener noreferrer">
+                                    <FaLinkedin />
+                                    Parker Esmay
+                                </a>
+                            </Button>
+                        </List.Item>
+                        <List.Item>
+                            <Button asChild variant="ghost" colorPalette="teal">
+                                <a href="https://twitter.com/parkeresmay" target="_blank" rel="noopener noreferrer">
+                                    <FaTwitter />
                                     @parkeresmay
-                                </Button>
-                            </Link>
-                        </ListItem>
-                        <ListItem>
-                            <Link href="https://github.com/thesyntaxninja" target="_blank">
-                                <Button
-                                    variant="ghost"
-                                    colorScheme="teal"
-                                    leftIcon={<FaGithub />}
-                                >
+                                </a>
+                            </Button>
+                        </List.Item>
+                        <List.Item>
+                            <Button asChild variant="ghost" colorPalette="teal">
+                                <a href="https://github.com/thesyntaxninja" target="_blank" rel="noopener noreferrer">
+                                    <FaGithub />
                                     @thesyntaxninja
-                                </Button>
-                            </Link>
-                        </ListItem>
-                    </List>
+                                </a>
+                            </Button>
+                        </List.Item>
+                    </List.Root>
                 </Flex>
             </Animate>
         </Layout>

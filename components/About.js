@@ -6,7 +6,6 @@ import {
     Box,
     Image,
     VStack,
-    useColorModeValue,
 } from '@chakra-ui/react'
 import Tilt from 'react-parallax-tilt'
 
@@ -15,14 +14,16 @@ const About = () => {
         <Box>
             <Flex
                 mt={'80px'}
+                mb={'48px'}
                 justifyContent={'space-between'}
                 alignItems={'center'}
                 flexDirection={{base: 'column', md: 'row'}}
             >
-                <VStack align={'left'}>
+                <VStack alignItems={'flex-start'}>
                     <Heading
                         as={'h1'}
                         fontSize={{base: '60px', md: '80px'}}
+                        lineHeight={'1.2'}
                         fontWeight={'medium'}
                     >
                         Parker Esmay
@@ -31,7 +32,7 @@ const About = () => {
                         fontWeight={'medium'}
                         fontSize={{base: '18px', md: '20px'}}
                     >
-                        Founder / Engineer
+                        Founder &amp; CEO, Scriptorii
                     </Text>
                 </VStack>
                     <Tilt
@@ -43,23 +44,18 @@ const About = () => {
                         transitionSpeed={500}
                     >
                         <Image
-                            src={useColorModeValue('/images/home/avatar-light.svg', '/images/home/avatar-dark.svg')}
+                            src={'/images/home/avatar-light.svg'}
                             mt={{base: '1rem', md: 0}}
+                            _dark={{display: 'none'}}
+                        />
+                        <Image
+                            src={'/images/home/avatar-dark.svg'}
+                            mt={{base: '1rem', md: 0}}
+                            display={'none'}
+                            _dark={{display: 'block'}}
                         />
                     </Tilt>
                 </Flex>
-
-            <Box
-                borderRadius="lg"
-                mt={{base: 12, md: 6}}
-                mb={'48px'}
-                p={6}
-                textAlign="center"
-                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-                css={{ backdropFilter: 'blur(10px)' }}
-            >
-                Greetings. I&apos;m a founder and engineering leader based in Scottsdale, AZ!
-            </Box>
         </Box>
     )
 }
