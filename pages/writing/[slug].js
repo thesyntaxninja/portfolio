@@ -60,18 +60,25 @@ const proseStyles = {
 
 const Post = ({post}) => {
     const url = `${SITE_URL}/writing/${post.slug}`
+    // A cover photo wins if the post has one, otherwise a generated title card
+    const image = post.cover ? `${SITE_URL}${post.cover}` : `${SITE_URL}/api/og/${post.slug}`
     return (
         <Layout hero={false}>
             <Head>
                 <title>{`${post.title} - Parker Esmay`}</title>
-                {post.description && <meta name="description" content={post.description} />}
+                {post.description && <meta key="description" name="description" content={post.description} />}
                 <link rel="canonical" href={url} />
-                <meta property="og:type" content="article" />
-                <meta property="og:title" content={post.title} />
+                <meta key="og:type" property="og:type" content="article" />
+                <meta key="og:title" property="og:title" content={post.title} />
                 <meta property="og:url" content={url} />
                 {post.description && <meta property="og:description" content={post.description} />}
-                {post.cover && <meta property="og:image" content={`${SITE_URL}${post.cover}`} />}
-                <meta name="twitter:title" content={post.title} />
+                <meta key="og:image" property="og:image" content={image} />
+                {!post.cover && <meta property="og:image:width" content="1200" />}
+                {!post.cover && <meta property="og:image:height" content="630" />}
+                <meta property="og:image:alt" content={post.title} />
+                <meta key="twitter:title" name="twitter:title" content={post.title} />
+                {post.description && <meta name="twitter:description" content={post.description} />}
+                <meta key="twitter:image" name="twitter:image" content={image} />
                 <meta property="article:published_time" content={post.date} />
             </Head>
 
