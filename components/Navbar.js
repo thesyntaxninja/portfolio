@@ -63,8 +63,8 @@ const Navbar = props => {
                     <LinkItem href="/" path={path} textTransform={'uppercase'}>
                         <IoHome />
                     </LinkItem>
-                    <LinkItem href="/works" path={path} textTransform={'uppercase'}>
-                        Works
+                    <LinkItem href="/writing" path={path} textTransform={'uppercase'}>
+                        Writing
                     </LinkItem>
                     <LinkItem
                         target="_blank"
@@ -97,8 +97,8 @@ const Navbar = props => {
                                         <Menu.Item value="about" asChild>
                                             <NextLink href="/">About</NextLink>
                                         </Menu.Item>
-                                        <Menu.Item value="works" asChild>
-                                            <NextLink href="/works">Works</NextLink>
+                                        <Menu.Item value="writing" asChild>
+                                            <NextLink href="/writing">Writing</NextLink>
                                         </Menu.Item>
                                         <Menu.Item value="source" asChild>
                                             <a href="https://github.com/thesyntaxninja/portfolio">View Source</a>
