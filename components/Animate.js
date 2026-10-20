@@ -1,21 +1,14 @@
-import { motion } from 'framer-motion'
-import { chakra, shouldForwardProp } from '@chakra-ui/react'
-
-const AnimatedDiv = chakra(motion.div, {
-    shouldForwardProp: prop => {
-        return shouldForwardProp(prop) || prop === 'transition'
-    }
-})
+import { motion } from 'motion/react'
 
 const Animate = ({ children, delay = 0 }) => (
-    <AnimatedDiv
+    <motion.div
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay }}
-        mb={6}
+        style={{ marginBottom: '1.5rem' }}
     >
         {children}
-    </AnimatedDiv>
+    </motion.div>
 )
 
 export default Animate

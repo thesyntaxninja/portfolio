@@ -1,15 +1,22 @@
-import { AnimatePresence, motion } from 'framer-motion'
-import { IconButton, useColorMode, useColorModeValue, Icon } from '@chakra-ui/react'
+import { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'motion/react'
+import { IconButton, Icon } from '@chakra-ui/react'
+import { useTheme } from 'next-themes'
 import { FaRebel, FaEmpire } from 'react-icons/fa'
 
 const ThemeToggleButton = () => {
-    const { toggleColorMode } = useColorMode()
+    const { resolvedTheme, setTheme } = useTheme()
+    const [mounted, setMounted] = useState(false)
+    useEffect(() => setMounted(true), [])
+
+    // The theme is only known on the client, so render the light variant until mounted
+    const isDark = mounted && resolvedTheme === 'dark'
 
     return (
-        <AnimatePresence exitBeforeEnter initial={false}>
+        <AnimatePresence mode="wait" initial={false}>
             <motion.div
                 style={{ display: 'inline-block' }}
-                key={useColorModeValue('light', 'dark')}
+                key={isDark ? 'dark' : 'light'}
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: 20, opacity: 0 }}
@@ -17,26 +24,16 @@ const ThemeToggleButton = () => {
             >
                 <IconButton
                     aria-label="Toggle theme"
-                    bgColor={useColorModeValue('bgDark', 'bgLight')}
+                    bg={isDark ? 'bgLight' : 'bgDark'}
                     _hover={{
-                        background: useColorModeValue('rgba(32, 32, 35, .7)', 'rgba(240, 231, 219, .5)')
+                        bg: isDark ? 'rgba(240, 231, 219, .5)' : 'rgba(32, 32, 35, .7)'
                     }}
-                    icon={useColorModeValue(
-                        <Icon
-                            as={FaEmpire}
-                            color={'white'}
-                            h={6}
-                            w={6}
-                        />,
-                        <Icon
-                            as={FaRebel}
-                            color={'black'}
-                            h={5}
-                            w={5}
-                        />
-                    )}
-                    onClick={toggleColorMode}
-                />
+                    onClick={() => setTheme(isDark ? 'light' : 'dark')}
+                >
+                    {isDark
+                        ? <Icon as={FaRebel} color={'black'} boxSize={5} />
+                        : <Icon as={FaEmpire} color={'white'} boxSize={6} />}
+                </IconButton>
             </motion.div>
         </AnimatePresence>
     )

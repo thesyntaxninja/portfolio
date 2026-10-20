@@ -5,31 +5,28 @@ import {
     Link,
     Stack,
     Menu,
-    MenuItem,
-    MenuList,
-    MenuButton,
+    Portal,
     IconButton,
-    useColorModeValue
 } from '@chakra-ui/react'
-import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './ThemeToggleButton'
-import { IoLogoGithub, IoHome } from 'react-icons/io5'
+import { IoLogoGithub, IoHome, IoMenu } from 'react-icons/io5'
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
-    const active = path === href
-    const inactiveColor = useColorModeValue('darkText', 'lightText')
+    // Section links stay active on their child pages, e.g. /writing/some-post
+    const active = href === '/' ? path === href : path.startsWith(href)
     return (
-        <NextLink href={href} passHref scroll={false}>
-            <Link
-                p={2}
-                bg={active ? useColorModeValue('teal', '#81E6D9') : undefined}
-                color={active ? '#202023' : inactiveColor}
-                target={target}
-                {...props}
-            >
+        <Link
+            asChild
+            p={2}
+            bg={active ? { base: 'teal', _dark: '#81E6D9' } : undefined}
+            color={active ? '#202023' : 'pageText'}
+            target={target}
+            {...props}
+        >
+            <NextLink href={href} scroll={false}>
                 {children}
-            </Link>
-        </NextLink>
+            </NextLink>
+        </Link>
     )
 }
 
@@ -41,8 +38,8 @@ const Navbar = props => {
             position="fixed"
             as="nav"
             w="100%"
-            bg={useColorModeValue('#ffffff40', '#20202380')}
-            sx={{ backdropFilter: 'blur(10px)' }}
+            bg={{ base: '#ffffff40', _dark: '#20202380' }}
+            backdropFilter="blur(10px)"
             zIndex={1}
             transform={'translateZ(100px)'}
             {...props}
@@ -50,10 +47,10 @@ const Navbar = props => {
             <Container
                 display="flex"
                 p={2}
-                maxW="container.lg"
-                wrap="wrap"
-                align="center"
-                justify="space-between"
+                maxW="5xl"
+                flexWrap="wrap"
+                alignItems="center"
+                justifyContent="space-between"
             >
                 <Stack
                     direction={{ base: 'column', md: 'row' }}
@@ -75,7 +72,7 @@ const Navbar = props => {
                         path={path}
                         display="inline-flex"
                         alignItems="center"
-                        style={{ gap: 4 }}
+                        gap={1}
                         pl={2}
                         textTransform={'uppercase'}
                     >
@@ -84,32 +81,32 @@ const Navbar = props => {
                     </LinkItem>
                 </Stack>
 
-                <Box flex={1} align="right">
+                <Box flex={1} textAlign="right">
                     <ThemeToggleButton />
 
                     <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
-                        <Menu isLazy id="navbar-menu">
-                            <MenuButton
-                                as={IconButton}
-                                icon={<HamburgerIcon />}
-                                variant="outline"
-                                aria-label="Options"
-                            />
-                            <MenuList backgroundColor={useColorModeValue('white', '#202023')}>
-                                <NextLink href="/" passHref>
-                                    <MenuItem as={Link}>About</MenuItem>
-                                </NextLink>
-                                <NextLink href="/works" passHref>
-                                    <MenuItem as={Link}>Works</MenuItem>
-                                </NextLink>
-                                <MenuItem
-                                    as={Link}
-                                    href="https://github.com/thesyntaxninja/portfolio"
-                                >
-                                    View Source
-                                </MenuItem>
-                            </MenuList>
-                        </Menu>
+                        <Menu.Root id="navbar-menu" lazyMount>
+                            <Menu.Trigger asChild>
+                                <IconButton variant="outline" aria-label="Options">
+                                    <IoMenu />
+                                </IconButton>
+                            </Menu.Trigger>
+                            <Portal>
+                                <Menu.Positioner>
+                                    <Menu.Content bg={{ base: 'white', _dark: '#202023' }}>
+                                        <Menu.Item value="about" asChild>
+                                            <NextLink href="/">About</NextLink>
+                                        </Menu.Item>
+                                        <Menu.Item value="works" asChild>
+                                            <NextLink href="/works">Works</NextLink>
+                                        </Menu.Item>
+                                        <Menu.Item value="source" asChild>
+                                            <a href="https://github.com/thesyntaxninja/portfolio">View Source</a>
+                                        </Menu.Item>
+                                    </Menu.Content>
+                                </Menu.Positioner>
+                            </Portal>
+                        </Menu.Root>
                     </Box>
                 </Box>
             </Container>
