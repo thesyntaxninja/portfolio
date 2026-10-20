@@ -21,7 +21,7 @@ const Home = () => {
                 <Text mb={'1rem'}>
                     Parker is the founder and CEO of Scriptorii, which helps companies put AI to work across the
                     tools they already use. He has spent his career leading technical teams and building companies.
-                    He led engineering at Kinetic through $1B in trading volume, then took Superstack through a
+                    He led engineering at Kinetic through $1B+ in trading volume, then took Superstack through a
                     merger as CEO. He&apos;s still an engineer at heart, happiest somewhere between product, systems
                     design, and building the thing. When not online, he loves spending time with his family and all
                     things space related.
