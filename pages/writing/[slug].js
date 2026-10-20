@@ -3,6 +3,8 @@ import Head from "next/head"
 import NextLink from "next/link"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
+import remarkMath from "remark-math"
+import rehypeKatex from "rehype-katex"
 import {
     Box,
     Heading,
@@ -53,6 +55,7 @@ const proseStyles = {
     '& code': {fontFamily: 'mono', fontSize: '.9em', bg: 'whiteAlpha.500', px: '.3em', borderRadius: 'sm'},
     '& pre': {bg: 'whiteAlpha.500', p: '1rem', borderRadius: 'md', overflowX: 'auto', mb: '1.5rem'},
     '& pre code': {bg: 'transparent', p: 0},
+    '& .katex-display': {my: '2rem', overflowX: 'auto', overflowY: 'hidden'},
 }
 
 const Post = ({post}) => {
@@ -104,7 +107,7 @@ const Post = ({post}) => {
                 <Separator borderColor={'pageMuted'} mb={'2.5rem'} />
 
                 <Box as={'article'} css={proseStyles}>
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
+                    <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>{post.content}</ReactMarkdown>
                 </Box>
 
                 {post.crossposts.length > 0 && (
